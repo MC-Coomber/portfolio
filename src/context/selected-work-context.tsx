@@ -1,9 +1,9 @@
-import WorkModel from "@/data/work";
+import ProjectModel from "@/data/work";
 import { createContext } from "react";
 
 interface SelectedWorkContextProps {
-  selectedWork: WorkModel | undefined;
-  setSelectedWork: (val: WorkModel | undefined) => void;
+  selectedWork: ProjectModel | undefined;
+  setSelectedWork: (val: ProjectModel | undefined) => void;
 }
 
 export const SelectedWorkContext = createContext<SelectedWorkContextProps>({

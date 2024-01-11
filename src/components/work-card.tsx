@@ -1,5 +1,5 @@
 import { SelectedWorkContext } from "@/context/selected-work-context";
-import WorkModel from "@/data/work";
+import ProjectModel from "@/data/work";
 import { Drawer } from "@mui/material";
 import { useContext, useState } from "react";
 
@@ -18,8 +18,8 @@ export default function WorkCard({ model }: WorkCardProps) {
         {model.startDate} - {model.endDate}
       </div>
       <div className="flex-col flex-auto">
-        <h3 className="text-xl text-slate-500">{model.company}</h3>
-        <h4 className="dd text-base">{model.position}</h4>
+        <h3 className="text-xl text-slate-500">{model.name}</h3>
+        <h4 className="dd text-base">{model.company}</h4>
         <p className="mt-2">{model.description}</p>
       </div>
     </div>
@@ -27,5 +27,5 @@ export default function WorkCard({ model }: WorkCardProps) {
 }
 
 interface WorkCardProps {
-  model: WorkModel;
+  model: ProjectModel;
 }

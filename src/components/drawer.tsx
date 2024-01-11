@@ -1,5 +1,5 @@
 import { SelectedWorkContext } from "@/context/selected-work-context";
-import WorkModel from "@/data/work";
+import ProjectModel from "@/data/work";
 import { AppBar, Icon, IconButton } from "@mui/material";
 import { useContext, useRef } from "react";
 import { Close } from "@mui/icons-material";
@@ -15,7 +15,7 @@ export function DrawerContent() {
           <Close />
         </IconButton>
         <div className="px-2">
-          {workModel?.position} | {workModel?.company}
+          {workModel?.company} | {workModel?.name}
         </div>
       </AppBar>
     </>

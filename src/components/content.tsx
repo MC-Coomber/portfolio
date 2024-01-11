@@ -5,13 +5,13 @@ import WorkCard from "./work-card";
 import Bio from "./bio";
 import { Drawer } from "@mui/material";
 import { createContext, useEffect, useState } from "react";
-import WorkModel from "@/data/work";
+import ProjectModel from "@/data/work";
 import { SelectedWorkContext } from "@/context/selected-work-context";
 import { DrawerContent } from "./drawer";
 
 export default function Content() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [selectedWork, setSelectedWork] = useState<WorkModel | undefined>(
+  const [selectedWork, setSelectedWork] = useState<ProjectModel | undefined>(
     undefined
   );
 
@@ -29,7 +29,7 @@ export default function Content() {
       <Bio />
       <SelectedWorkContext.Provider value={{ selectedWork, setSelectedWork }}>
         {allWork.map((work) => (
-          <WorkCard key={work.company} model={work} />
+          <WorkCard key={work.name} model={work} />
         ))}
         <Drawer
           open={drawerOpen}

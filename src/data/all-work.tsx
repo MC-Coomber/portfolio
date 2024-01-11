@@ -1,67 +1,19 @@
-import WorkModel from "./work";
+import Project from "./work";
+import ProjectModel from "./work";
 
 export const allWork = [
-  new WorkModel(
-    "Zebra Technologies",
-    "Frontend Developer",
-    "Test desc",
-    "Aug 2021",
-    "Present"
-  ),
-  new WorkModel(
-    "Zebra Technologies",
-    "Frontend Developer",
-    "Test desc",
-    "Aug 2021",
-    "Present"
-  ),
-  new WorkModel(
-    "Zebra Technologies",
-    "Frontend Developer",
-    "Test desc",
-    "Aug 2021",
-    "Present"
-  ),
-  new WorkModel(
-    "Zebra Technologies",
-    "Frontend Developer",
-    "Test desc",
-    "Aug 2021",
-    "Present"
-  ),
-  new WorkModel(
-    "Zebra Technologies",
-    "Frontend Developer",
-    "Test desc",
-    "Aug 2021",
-    "Present"
-  ),
-  new WorkModel(
-    "Zebra Technologies",
-    "Frontend Developer",
-    "Test desc",
-    "Aug 2021",
-    "Present"
-  ),
-  new WorkModel(
-    "Zebra Technologies",
-    "Frontend Developer",
-    "Test desc",
-    "Aug 2021",
-    "Present"
-  ),
-  new WorkModel(
-    "Zebra Technologies",
-    "Frontend Developer",
-    "Test desc",
-    "Aug 2021",
-    "Present"
-  ),
-  new WorkModel(
-    "Zebra Technologies",
-    "Frontend Developer",
-    "Test desc",
-    "Aug 2021",
-    "Present"
-  ),
+  {
+    name: "Test Proj",
+    company: "Zebra",
+    description: "Test desc",
+    imageUrl:
+      "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+    pages: [
+      {
+        imageUrl:
+          "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+        text: "Page text",
+      },
+    ],
+  } as Project,
 ];
