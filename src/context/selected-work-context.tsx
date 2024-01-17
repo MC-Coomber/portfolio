@@ -1,4 +1,4 @@
-import ProjectModel from "@/data/work";
+import ProjectModel from "@/data/project";
 import { createContext } from "react";
 
 interface SelectedWorkContextProps {

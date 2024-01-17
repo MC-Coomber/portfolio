@@ -1,12 +1,19 @@
+"use client";
 import Sidebar from "@/components/sidebar";
 import Content from "@/components/content";
 import "./globals.css";
+import { useState } from "react";
+import { ImageContext } from "@/context/image-context";
 
 export default function Home() {
+  const [currentImage, setCurrentImage] = useState<string>();
+
   return (
-    <div className="h-screen max-w-screen lg:flex px-12 lg:px-24 py-12 lg:py-0 gap-4 bg-secondary-blue text-text-color">
-      <Sidebar />
-      <Content />
+    <div className="max-w-screen lg:flex pr-12 lg:pr-24 py-12 lg:py-0 gap-16 bg-secondary-blue text-text-color">
+      <ImageContext.Provider value={{ currentImage, setCurrentImage }}>
+        <Sidebar />
+        <Content />
+      </ImageContext.Provider>
     </div>
   );
 }

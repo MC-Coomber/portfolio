@@ -1,9 +1,8 @@
-import Project from "./work";
-import ProjectModel from "./work";
+import Project from "./project";
 
 export const allWork = [
   {
-    name: "Test Proj",
+    name: "Test Project",
     company: "Zebra",
     description: "Test desc",
     imageUrl:
@@ -12,7 +11,91 @@ export const allWork = [
       {
         imageUrl:
           "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
-        text: "Page text",
+        text: "This was a project where I did stuff and things and stuff and things",
+      },
+    ],
+  } as Project,
+  {
+    name: "Test Project",
+    company: "Zebra",
+    description: "Test desc",
+    imageUrl:
+      "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+    pages: [
+      {
+        imageUrl:
+          "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+        text: "This was a project where I did stuff and things and stuff and things",
+      },
+    ],
+  } as Project,
+  {
+    name: "Test Project",
+    company: "Zebra",
+    description: "Test desc",
+    imageUrl:
+      "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+    pages: [
+      {
+        imageUrl:
+          "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+        text: "This was a project where I did stuff and things and stuff and things",
+      },
+    ],
+  } as Project,
+  {
+    name: "Test Project",
+    company: "Zebra",
+    description: "Test desc",
+    imageUrl:
+      "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+    pages: [
+      {
+        imageUrl:
+          "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+        text: "This was a project where I did stuff and things and stuff and things",
+      },
+    ],
+  } as Project,
+  {
+    name: "Test Project",
+    company: "Zebra",
+    description: "Test desc",
+    imageUrl:
+      "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+    pages: [
+      {
+        imageUrl:
+          "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+        text: "This was a project where I did stuff and things and stuff and things",
+      },
+    ],
+  } as Project,
+  {
+    name: "Test Project",
+    company: "Zebra",
+    description: "Test desc",
+    imageUrl:
+      "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+    pages: [
+      {
+        imageUrl:
+          "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+        text: "This was a project where I did stuff and things and stuff and things",
+      },
+    ],
+  } as Project,
+  {
+    name: "Test Project",
+    company: "Zebra",
+    description: "Test desc",
+    imageUrl:
+      "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+    pages: [
+      {
+        imageUrl:
+          "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+        text: "This was a project where I did stuff and things and stuff and things",
       },
     ],
   } as Project,

@@ -1,26 +1,31 @@
+import { ImageContext } from "@/context/image-context";
 import { SelectedWorkContext } from "@/context/selected-work-context";
-import ProjectModel from "@/data/work";
+import ProjectModel from "@/data/project";
 import { Drawer } from "@mui/material";
 import { useContext, useState } from "react";
+import Image from "next/image";
 
-export default function WorkCard({ model }: WorkCardProps) {
+export default function ProjectCard({ model }: WorkCardProps) {
+  const [lockImage, setLockImage] = useState(false);
   const { setSelectedWork } = useContext(SelectedWorkContext);
+  const { setCurrentImage } = useContext(ImageContext);
 
   return (
-    <div
-      className="flex gap-4 align-text-top w-full h-min hover:bg-slate-800 p-4 rounded-md cursor-pointer"
-      onClick={() => {
-        console.log(model);
-        setSelectedWork(model);
-      }}
-    >
-      <div className="flex flex-1">
-        {model.startDate} - {model.endDate}
+    <div className="group flex flex-col gap-4 align-text-top w-full h-min cursor-pointer overflow-hidden">
+      <div className="overflow-hidden">
+        <Image
+          src={model.imageUrl}
+          alt="image"
+          height={400}
+          width={800}
+          className="hidden lg:flex flex-1 justify-start items-center object-contain object-center group-hover:scale-105 transition-all"
+        />
       </div>
-      <div className="flex-col flex-auto">
+      <div className="flex-col flex-auto ">
         <h3 className="text-xl text-slate-500">{model.name}</h3>
-        <h4 className="dd text-base">{model.company}</h4>
-        <p className="mt-2">{model.description}</p>
+        <h4 className="dd text-base">
+          {model.company} | {model.description}
+        </h4>
       </div>
     </div>
   );

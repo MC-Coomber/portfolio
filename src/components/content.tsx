@@ -1,22 +1,23 @@
 "use client";
 
 import { allWork } from "@/data/all-work";
-import WorkCard from "./work-card";
+import ProjectCard from "./work-card";
 import Bio from "./bio";
-import { Drawer } from "@mui/material";
-import { createContext, useEffect, useState } from "react";
-import ProjectModel from "@/data/work";
+import { Drawer, backdropClasses } from "@mui/material";
+import { createContext, useContext, useEffect, useState } from "react";
+import ProjectModel from "@/data/project";
 import { SelectedWorkContext } from "@/context/selected-work-context";
 import { DrawerContent } from "./drawer";
+import { ImageContext } from "@/context/image-context";
 
 export default function Content() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const { setCurrentImage } = useContext(ImageContext);
   const [selectedWork, setSelectedWork] = useState<ProjectModel | undefined>(
     undefined
   );
 
   useEffect(() => {
-    console.log(selectedWork);
     if (selectedWork != undefined) {
       setDrawerOpen(true);
     } else {
@@ -26,18 +27,27 @@ export default function Content() {
 
   return (
     <main className="flex lg:w-1/2 lg:pt-24 py-4 flex-col select-none">
-      <Bio />
       <SelectedWorkContext.Provider value={{ selectedWork, setSelectedWork }}>
-        {allWork.map((work) => (
-          <WorkCard key={work.name} model={work} />
-        ))}
+        <div className="grid grid-cols-2 gap-16">
+          {allWork.map((work) => (
+            <ProjectCard key={work.name} model={work} />
+          ))}
+        </div>
         <Drawer
           open={drawerOpen}
           PaperProps={{
-            className: "lg:w-1/2 sm:w-full",
+            className: "w-full lg:w-1/2",
           }}
           anchor="right"
-          hideBackdrop={true}
+          slotProps={{
+            backdrop: {
+              style: { background: "transparent" },
+            },
+          }}
+          onClose={() => {
+            setSelectedWork(undefined);
+            setCurrentImage(undefined);
+          }}
         >
           <DrawerContent />
         </Drawer>
