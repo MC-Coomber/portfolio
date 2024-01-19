@@ -1,15 +1,7 @@
-import { ImageContext } from "@/context/image-context";
-import { SelectedWorkContext } from "@/context/selected-work-context";
 import ProjectModel from "@/data/project";
-import { Drawer } from "@mui/material";
-import { useContext, useState } from "react";
 import Image from "next/image";
 
 export default function ProjectCard({ model }: WorkCardProps) {
-  const [lockImage, setLockImage] = useState(false);
-  const { setSelectedWork } = useContext(SelectedWorkContext);
-  const { setCurrentImage } = useContext(ImageContext);
-
   return (
     <div className="group flex flex-col gap-4 align-text-top w-full h-min cursor-pointer overflow-hidden">
       <div className="overflow-hidden">

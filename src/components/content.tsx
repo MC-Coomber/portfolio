@@ -1,57 +1,30 @@
 "use client";
-
 import { allWork } from "@/data/all-work";
 import ProjectCard from "./work-card";
-import Bio from "./bio";
-import { Drawer, backdropClasses } from "@mui/material";
-import { createContext, useContext, useEffect, useState } from "react";
-import ProjectModel from "@/data/project";
-import { SelectedWorkContext } from "@/context/selected-work-context";
-import { DrawerContent } from "./drawer";
-import { ImageContext } from "@/context/image-context";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { forwardRef } from "react";
+import Image from "next/image";
+import josh from "../assets/josh.jpg";
 
-export default function Content() {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const { setCurrentImage } = useContext(ImageContext);
-  const [selectedWork, setSelectedWork] = useState<ProjectModel | undefined>(
-    undefined
-  );
-
-  useEffect(() => {
-    if (selectedWork != undefined) {
-      setDrawerOpen(true);
-    } else {
-      setDrawerOpen(false);
-    }
-  }, [selectedWork]);
+export default forwardRef<HTMLDivElement>(function Content(props, ref) {
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   return (
-    <main className="flex lg:w-1/2 lg:pt-24 py-4 flex-col select-none">
-      <SelectedWorkContext.Provider value={{ selectedWork, setSelectedWork }}>
+    <>
+      <div style={{ height: "80vh" }}></div>
+      <motion.section
+        className="flex justify-center p-32 select-none"
+        style={{ opacity: opacity }}
+        ref={ref}
+      >
         <div className="grid grid-cols-2 gap-16">
-          {allWork.map((work) => (
-            <ProjectCard key={work.name} model={work} />
+          {allWork.map((work, index) => (
+            <ProjectCard key={index} model={work} />
           ))}
         </div>
-        <Drawer
-          open={drawerOpen}
-          PaperProps={{
-            className: "w-full lg:w-1/2",
-          }}
-          anchor="right"
-          slotProps={{
-            backdrop: {
-              style: { background: "transparent" },
-            },
-          }}
-          onClose={() => {
-            setSelectedWork(undefined);
-            setCurrentImage(undefined);
-          }}
-        >
-          <DrawerContent />
-        </Drawer>
-      </SelectedWorkContext.Provider>
-    </main>
+        {/* // <Image src={josh} alt="josh" /> */}
+      </motion.section>
+    </>
   );
-}
+});

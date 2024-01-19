@@ -7,4 +7,5 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: rgb(9 64 116 / var(--tw-bg-opacity));
   user-select: none;
+  overflow-x: hidden;
 }
