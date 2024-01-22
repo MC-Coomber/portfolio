@@ -7,7 +7,7 @@ export const allWork = [
     company: "Zebra Technologies",
     description: "Lead Front End Developer",
     imageUrl:
-      "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQbxKU661kNI0m7Yw0xBW5SrN5Uc56_8cq4t4OhaYMXIvPhIgJo8v7H2d3PDtIDsfQt",
+      "https://firebasestorage.googleapis.com/v0/b/portfolio-8d3d7.appspot.com/o/mikecoomber99%40gmail.com%2FFrame%202.png?alt=media&token=924685f7-f07e-45e4-bdeb-82556924ea33",
     pages: [
       {
         imageUrl:

@@ -8,7 +8,17 @@ import { MouseEventHandler } from "react";
 
 export function Chevron({ onClick }: { onClick: MouseEventHandler }) {
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.08, 0.9, 1],
+    [1, 0, 0, 1]
+  );
+
+  const rotation = useTransform(
+    scrollYProgress,
+    [0, 0.1, 0.8, 1],
+    [0, 0, 180, 180]
+  );
 
   const bounce: Variants = {
     initial: {
@@ -22,7 +32,7 @@ export function Chevron({ onClick }: { onClick: MouseEventHandler }) {
   return (
     <motion.div
       className="sticky bottom-0 left-0 right-0 flex justify-center"
-      style={{ opacity: opacity }}
+      style={{ opacity: opacity, rotate: rotation }}
     >
       <motion.div
         initial="initial"

@@ -12,19 +12,19 @@ export default forwardRef<HTMLDivElement>(function Content(props, ref) {
 
   return (
     <>
-      <div style={{ height: "80vh" }}></div>
+      <div style={{ height: "100vh" }}></div>
       <motion.section
-        className="flex justify-center p-32 select-none"
+        className="flex justify-center p-16 md:p-18 lg:p-20 select-none"
         style={{ opacity: opacity }}
         ref={ref}
       >
-        <div className="grid grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 md:gap-12 xl:gap-16">
           {allWork.map((work, index) => (
             <ProjectCard key={index} model={work} />
           ))}
         </div>
-        {/* // <Image src={josh} alt="josh" /> */}
       </motion.section>
+      {/* <Image src={josh} alt="josh" /> */}
     </>
   );
 });

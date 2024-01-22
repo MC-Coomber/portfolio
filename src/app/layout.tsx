@@ -1,6 +1,6 @@
-import { Red_Hat_Display } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
-const rubik = Red_Hat_Display({ subsets: ["latin"] });
+const monserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Next.js",
@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={rubik.className}>{children}</body>
+      <body className={monserrat.className}>{children}</body>
     </html>
   );
 }
