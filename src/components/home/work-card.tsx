@@ -1,7 +1,7 @@
 import ProjectModel from "@/data/project";
 import Image from "next/image";
 import Link from "next/link";
-import Zebra from "../assets/Logo.png";
+import Zebra from "../../assets/Logo.png";
 
 export default function ProjectCard({ model }: WorkCardProps) {
   return (

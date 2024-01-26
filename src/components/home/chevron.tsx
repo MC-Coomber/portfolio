@@ -7,10 +7,13 @@ import { Variants, motion, useScroll, useTransform } from "framer-motion";
 import { MouseEventHandler } from "react";
 
 export function Chevron({ onClick }: { onClick: MouseEventHandler }) {
+  const hideAtYProgress = 0.08;
+  const showAtYProgress = 0.9;
+
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.08, 0.9, 1],
+    [0, hideAtYProgress, showAtYProgress, 1],
     [1, 0, 0, 1]
   );
 
@@ -18,6 +21,10 @@ export function Chevron({ onClick }: { onClick: MouseEventHandler }) {
     scrollYProgress,
     [0, 0.1, 0.8, 1],
     [0, 0, 180, 180]
+  );
+
+  const display = useTransform(scrollYProgress, (value) =>
+    value > hideAtYProgress && value < showAtYProgress ? "none" : "flex"
   );
 
   const bounce: Variants = {
@@ -32,7 +39,7 @@ export function Chevron({ onClick }: { onClick: MouseEventHandler }) {
   return (
     <motion.div
       className="sticky bottom-0 left-0 right-0 flex justify-center"
-      style={{ opacity: opacity, rotate: rotation }}
+      style={{ opacity: opacity, rotate: rotation, display: display }}
     >
       <motion.div
         initial="initial"

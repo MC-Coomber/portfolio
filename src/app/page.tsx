@@ -1,8 +1,8 @@
 "use client";
-import Content from "@/components/content";
+import Content from "@/components/home/content";
 import "./globals.css";
-import { FirstView } from "@/components/header";
-import { Chevron } from "@/components/chevron";
+import { Header } from "@/components/home/header";
+import { Chevron } from "@/components/home/chevron";
 import { useRef } from "react";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="">
-      <FirstView />
+      <Header />
       <Content ref={contentRef} />
       <Chevron
         onClick={() =>
