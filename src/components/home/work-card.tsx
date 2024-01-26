@@ -21,9 +21,7 @@ export default function ProjectCard({ model }: WorkCardProps) {
               <h1 className="font-semibold text-xl lg:text-2xl">
                 {model.name}
               </h1>
-              <h2 className="font-medium text-sm lg:text-md">
-                {model.description}
-              </h2>
+              <h2 className="font-medium text-sm lg:text-md">{model.role}</h2>
             </div>
           </div>
         </div>
