@@ -1,4 +1,5 @@
 import Page from "./page";
+import { Tool } from "./tool";
 
 export default interface Project {
   name: string;
@@ -6,7 +7,7 @@ export default interface Project {
   id: string;
   company: string;
   role: string;
-  services: string[];
+  tools: Tool[];
   description: string;
   pages: Page[];
 }

@@ -1,9 +1,9 @@
 import { getProjectById } from "@/api";
+import { Footer } from "@/components/home/footer";
 import { ProjectHeader } from "@/components/project/project-header";
 import Page from "@/data/page";
 import clsx from "clsx";
 import Image from "next/image";
-import { relative } from "path";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const project = await getProjectById(params.id);
@@ -14,6 +14,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <div key={index} className="snap-center">
           {index == 0 && <ProjectHeader project={project} />}
           {ProjectPage(page)}
+          {index == project.pages.length - 1 && <Footer />}
         </div>
       ))}
     </div>
@@ -30,8 +31,8 @@ function ProjectPage(page: Page) {
     >
       {page.imageUrl && (
         <div
-          className="flex relative w-full h-full"
-          style={{ minHeight: "50%", flex: "1.8" }}
+          className="flex flex-col items-center gap-4 relative w-full h-full"
+          style={{ minHeight: "45%", flex: "1.8" }}
         >
           <Image
             src={page.imageUrl!}
@@ -39,10 +40,15 @@ function ProjectPage(page: Page) {
             alt="img"
             className="flex object-contain"
           />
+          {page.imageCaption && (
+            <label className="absolute bottom-0 italic">
+              {page.imageCaption}
+            </label>
+          )}
         </div>
       )}
       <div className="text-left flex flex-1 flex-col gap-8 px-12 max-w-xl md:max-h-full justify-start">
-        <h2 className={clsx("font-semibold text-4xl text-clip", {})}>Title</h2>
+        <h2 className={"font-semibold text-4xl text-clip"}>{page.title}</h2>
         <div>{page.text}</div>
       </div>
     </div>

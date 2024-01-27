@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/home/header";
 import { Chevron } from "@/components/home/chevron";
 import { useRef } from "react";
+import { Footer } from "@/components/home/footer";
 
 export default function Home() {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -19,6 +20,7 @@ export default function Home() {
           })
         }
       />
+      <Footer />
     </div>
   );
 }
