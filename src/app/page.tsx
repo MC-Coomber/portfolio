@@ -1,26 +1,13 @@
-"use client";
-import Content from "@/components/home/content";
 import "./globals.css";
-import { Header } from "@/components/home/header";
-import { Chevron } from "@/components/home/chevron";
-import { useRef } from "react";
-import { Footer } from "@/components/home/footer";
+import { client } from "@/sanity/utils/client";
+import { Project } from "@/sanity/types";
+import Home from "@/components/home/home";
+import { getProjects } from "@/sanity/api";
 
-export default function Home() {
-  const contentRef = useRef<HTMLDivElement>(null);
-
+export default async function Page() {
+  const projects = await getProjects();
+  console.log(projects[0].image.asset);
   return (
-    <div className="">
-      <Header />
-      <Content ref={contentRef} />
-      <Chevron
-        onClick={() =>
-          contentRef.current?.scrollIntoView({
-            behavior: "smooth",
-          })
-        }
-      />
-      <Footer />
-    </div>
+    <Home projects={projects} />
   );
 }

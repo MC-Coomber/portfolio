@@ -1,4 +1,4 @@
-import { getProjectById } from "@/api";
+import { getProjectById } from "@/sanity/api";
 import { Footer } from "@/components/home/footer";
 import { ProjectHeader } from "@/components/project/project-header";
 import Page from "@/data/page";
