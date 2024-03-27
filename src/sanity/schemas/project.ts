@@ -52,6 +52,10 @@ export const projectType = defineType({
       type: 'image',
     }),
     defineField({
+      name: 'logo',
+      type: 'image',
+    }),
+    defineField({
       name: "tools",
       type: "array",
       of: [

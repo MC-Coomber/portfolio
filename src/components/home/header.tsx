@@ -1,7 +1,8 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Profile } from "../../../sanity.types";
 
-export function Header() {
+export function Header({ profile }: { profile: Profile }) {
   const { scrollYProgress } = useScroll();
 
   const increased = useTransform(scrollYProgress, (val) => val * 4);
@@ -20,8 +21,8 @@ export function Header() {
         className="flex flex-col items-center justify-center sticky text-center gap-4"
         style={{ scale: scale }}
       >
-        <h1 className="text-6xl font-bold">Mike Coomber</h1>
-        <h2 className="text-4xl">Front End Developer</h2>
+        <h1 className="text-6xl font-bold">{profile.name}</h1>
+        <h2 className="text-4xl">{profile.jobTitle}</h2>
       </motion.header>
     </motion.div>
   );

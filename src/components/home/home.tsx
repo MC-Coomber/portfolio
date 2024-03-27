@@ -4,14 +4,14 @@ import { Header } from "@/components/home/header";
 import { Chevron } from "@/components/home/chevron";
 import { useRef } from "react";
 import { Footer } from "@/components/home/footer";
-import { Project } from "@/sanity/types";
+import { Profile, Project } from "../../../sanity.types";
 
-export default function Home({ projects }: HomeProps) {
+export default function Home({ projects, profile }: HomeProps) {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="">
-      <Header />
+    <div>
+      <Header profile={profile} />
       <Content ref={contentRef} projects={projects} />
       <Chevron
         onClick={() =>
@@ -26,5 +26,6 @@ export default function Home({ projects }: HomeProps) {
 }
 
 interface HomeProps {
-  projects: Project[]
+  projects: Project[],
+  profile: Profile,
 }

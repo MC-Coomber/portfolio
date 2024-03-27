@@ -1,8 +1,12 @@
-import Project from "@/data/project";
+import { getTools } from "@/sanity/api";
+import { urlFor } from "@/sanity/utils/url-for";
 import Image from "next/image";
 import Link from "next/link";
+import { Project } from "../../../sanity.types";
 
-export function ProjectHeader({ project }: { project: Project }) {
+export async function ProjectHeader({ project }: { project: Project }) {
+  const tools = await getTools(project);
+
   return (
     <div className="flex flex-col px-12">
       <Link href={"/"}>
@@ -15,23 +19,22 @@ export function ProjectHeader({ project }: { project: Project }) {
         <h1 className="text-6xl font-semibold text-center">{project?.name}</h1>
         <h3 className="text-xl font-semibold pt-2">{project?.role}</h3>
         <ul className="flex flex-wrap gap-2 pt-4 items-center justify-center">
-          {project.tools &&
-            project.tools.map((tool, index) => (
-              <div
-                key={index}
-                className="flex gap-2 rounded-full bg-gray-200 py-2 px-4"
-              >
-                {tool.image && (
-                  <Image
-                    src={tool.image}
-                    alt={tool.name}
-                    width={24}
-                    height={24}
-                  />
-                )}
-                {tool.name}
-              </div>
-            ))}
+          {tools.map((tool, index) => (
+            <div
+              key={index}
+              className="flex gap-2 rounded-full bg-gray-200 py-2 px-4"
+            >
+              {tool.image && (
+                <Image
+                  src={urlFor(tool.image!.asset!) ?? ''}
+                  alt={tool.name ?? ''}
+                  width={24}
+                  height={24}
+                />
+              )}
+              {tool.name}
+            </div>
+          ))}
         </ul>
         <div
           className="flex gap-8 justify-between pt-16"
