@@ -34,7 +34,7 @@ function ProjectPage(page: any) {
         { "justify-start": !page.image, "justify-center": page.image }
       )}
     >
-      {page.imageUrl && (
+      {page.image && (
         <div
           className="flex flex-col items-center gap-4 relative w-full h-full"
           style={{ minHeight: "45%", flex: "1.8" }}
