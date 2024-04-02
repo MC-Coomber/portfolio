@@ -1,4 +1,3 @@
-import { Footer } from "@/components/home/footer";
 import { Montserrat } from "next/font/google";
 
 const monserrat = Montserrat({ subsets: ["latin"] });
