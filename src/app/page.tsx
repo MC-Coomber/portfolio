@@ -1,4 +1,3 @@
-import "./globals.css";
 import Home from "@/components/home/home";
 import { getProfile, getProjects } from "@/sanity/api";
 
